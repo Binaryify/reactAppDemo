@@ -6,17 +6,17 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   devtool: 'cheap-source-map',
   entry: [
-    path.resolve(__dirname, 'app/main.jsx'),
+    path.resolve(__dirname, 'src/main.jsx'),
   ],
   output: {
     path: __dirname + '/build',
     publicPath: '/',
-    filename: './bundle.js'
+    filename: './index.js'
   },
   module: {
     loaders: [{
       test: /\.js[x]?$/,
-      include: path.resolve(__dirname, 'app'),
+      include: path.resolve(__dirname, 'src'),
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {
@@ -35,11 +35,13 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([{
-      from: './app/index.html',
+      from: './src/index.html',
       to: 'index.html'
-    }, {
-      from: './app/main.css',
-      to: 'main.css'
-    }]),
+    }
+    // , {
+    //   from: './src/main.css',
+    //   to: 'main.css'
+    // }
+  ]),
   ]
 };

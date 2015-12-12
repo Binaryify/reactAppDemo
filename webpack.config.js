@@ -8,23 +8,23 @@ module.exports = {
     hot: true,
     inline: true,
     progress: true,
-    contentBase: './app',
+    contentBase: './src',
     port: 8080
   },
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
-    path.resolve(__dirname, 'app/main.jsx')
+    path.resolve(__dirname, 'src/main.jsx')
   ],
   output: {
     path: __dirname + '/build',
     publicPath: '/',
-    filename: './bundle.js'
+    filename: './index.js'
   },
   module: {
     loaders: [{
       test: /\.js[x]?$/,
-      include: path.resolve(__dirname, 'app'),
+      include: path.resolve(__dirname, 'src'),
       exclude: /node_modules/,
       loader: 'babel-loader'
     }, {

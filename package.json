@@ -36,8 +36,8 @@
     "lint": "eslint 'app/**/*.@(js|jsx)'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base app",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "start": "webpack-dev-server --devtool eval --progress --hot --colors --content-base src",
+    "deploy": "set NODE_ENV=production && webpack -p --config webpack.production.config.js",
     "validate": "npm ls"
   },
   "keywords": [

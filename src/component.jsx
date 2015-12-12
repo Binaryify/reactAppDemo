@@ -2,12 +2,13 @@ import React from 'react';
 import "./t.js"
 // import $ from 'jquery'
 import './app.scss';
+import WatchCar from "./washCar.jsx"
 import {
   Router,
   Route,
   Link
 } from 'react-router'
-
+import Slider from "./slider.jsx"
 //app路由
 export default class App extends React.Component {
   render () {
@@ -80,8 +81,20 @@ class SliderBox extends React.Component{
     super()
   }
   render(){
+    var slides = [{
+      background: "./imgs/1.jpg",
+      link: "https://zhuangtongfa.github.io/"
+    }, {
+      background: "./imgs/3.jpg",
+      link: "https://zhuangtongfa.github.io/"
+    }, {
+      background: "./imgs/1.jpg",
+      link:"https://zhuangtongfa.github.io/"
+    }];
     return(
-      <div className="sliderBox">SliderBox</div>
+      <div className="sliderBox">
+      <Slider slides= {slides}/>
+      </div>
     )
   }
 }
@@ -144,7 +157,7 @@ class CarShop extends React.Component {
         <li key={key}>
           <p className="title">{value.title}</p>
           <p className="content">{value.content}</p>
-          <img />
+          <img src="imgs/1.jpg"/>
         </li>
       )
     })
